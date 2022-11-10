@@ -13,7 +13,8 @@
 
 resource "null_resource" "git_clone" {
   provisioner "local-exec" {
-    command     = "./scripts/git_clone.sh -t 300"
+    command     = "cd $PATH && git submodule update --init"
+    # command     = "./scripts/git_clone.sh -t 300"
     environment = {
       PATH = var.git_submodule_path
     }
