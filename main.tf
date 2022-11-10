@@ -9,7 +9,7 @@ resource "null_resource" "git_submodule_init" {
   }
   
   triggers = {
-    when_new_release = var.tag
+    when_new_release = "${var.tag}-${tostring(var.app.force_update)}"
   }
 }
 
