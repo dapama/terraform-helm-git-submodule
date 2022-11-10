@@ -9,7 +9,7 @@ resource "null_resource" "git_submodule_init" {
   }
   
   triggers = {
-    always_run = "${timestamp()}"
+    when_new_release = var.tag
   }
 }
 
@@ -32,5 +32,12 @@ module "helm_release_argocd" {
 # module "helm_release_argocd_apps" {
 #   depends_on = [
 #     module.helm_release_argocd
+#   ]
+# }
+
+# resource "null_resource" "git_submodule_delete" {
+#   depends_on = [
+#     module.helm_release_argocd,
+#     module.helm_release_argocd_apps
 #   ]
 # }
