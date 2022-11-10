@@ -21,6 +21,6 @@ resource "null_resource" "git_clone" {
   }
 
   depends_on = [
-    "module.helm_release"
+    module.helm_release
   ]
 }
