@@ -42,3 +42,9 @@ variable "repository" {
   description = "Helm repository"
   type        = string
 }
+
+variable "tag" {
+  description = "Helm repository Tag"
+  type        = string
+  default     = "latest"
+}

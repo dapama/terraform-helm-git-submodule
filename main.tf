@@ -3,12 +3,11 @@ resource "null_resource" "git_submodule_init" {
   provisioner "local-exec" {
     command     = "git submodule add https://github.com/argoproj/argo-helm --branch $TAG"
     environment = {
-      TAG = lookup(var.app, "version", "latest")
+      TAG = var.tag
     }
     interpreter = ["bash", "-c"]
   }
   
-
   triggers = {
     always_run = "${timestamp()}"
   }
