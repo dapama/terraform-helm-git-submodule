@@ -1,7 +1,7 @@
 
 resource "null_resource" "git_submodule_init" {
   provisioner "local-exec" {
-    command     = "git submodule add https://github.com/argoproj/argo-helm --branch $TAG"
+    command     = "git submodule add https://github.com/argoproj/argo-helm && cd argo-helm && git checkout tags/$TAG"
     environment = {
       TAG = var.tag
     }
