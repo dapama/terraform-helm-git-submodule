@@ -20,7 +20,7 @@ resource "null_resource" "git_clone" {
     always_run = "${timestamp()}"
   }
 
-  depends_on = [
-    module.helm_release
-  ]
+  # depends_on = [
+  #   module.helm_release
+  # ]
 }
