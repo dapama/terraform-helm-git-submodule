@@ -42,8 +42,3 @@ variable "repository" {
   description = "Helm repository"
   type        = string
 }
-
-variable "git_submodule_path" {
-  description = "Path where the Git Submodule is placed."
-  type        = string
-}
