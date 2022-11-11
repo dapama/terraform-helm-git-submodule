@@ -3,21 +3,10 @@ variable "namespace" {
   type        = string
 }
 
-variable "app" {
-  description = "an application to deploy"
-  type        = map(any)
-}
-
 variable "repository_config" {
   description = "repository configuration"
   type        = map(any)
   default     = {}
-}
-
-variable "values" {
-  description = "Extra values"
-  type        = list(string)
-  default     = []
 }
 
 variable "set" {
@@ -47,4 +36,16 @@ variable "tag" {
   description = "Helm repository Tag"
   type        = string
   default     = "latest"
+}
+
+variable "argocd" {
+  description = "ArgoCD Chart variables"
+  type        = map(any)
+  default     = {}
+}
+
+variable "argocd_apps" {
+  description = "ArgoCD_Apps Chart variables"
+  type        = map(any)
+  default     = {}
 }
