@@ -49,3 +49,15 @@ variable "argocd_apps" {
   type        = map(any)
   default     = {}
 }
+
+variable "values_argocd" {
+  description = "Extra values for ArgoCD"
+  type        = list(string)
+  default     = []
+}
+
+variable "values_argocd_apps" {
+  description = "Extra values for ArgoCD_Apps"
+  type        = list(string)
+  default     = []
+}

@@ -19,7 +19,7 @@ module "helm_release_argocd" {
   namespace         = var.namespace
   repository        = var.repository
   app               = var.argocd.app
-  values            = var.argocd.values
+  values            = var.values_argocd
   repository_config = var.repository_config
   set               = var.set
   set_sensitive     = var.set_sensitive
@@ -35,7 +35,7 @@ module "helm_release_argocd_apps" {
   namespace         = var.namespace
   repository        = var.repository
   app               = var.argocd_apps.app
-  values            = var.argocd_apps.values
+  values            = var.values_argocd_apps
   repository_config = var.repository_config
   set               = var.set
   set_sensitive     = var.set_sensitive
